@@ -1,12 +1,32 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# NewsNest - top headlines 📰
 
-Currently, two official plugins are available:
+NewsNest is a dynamic news website that delivers the latest headlines and updates using the News API. Built with Bootstrap, it offers a clean, responsive design for seamless browsing across devices. Users can explore various news categories and stay informed with real-time updates. 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## API Reference 🌐
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### Base URL
+
+```http
+  GET https://newsapi.org/v2/top-headlines
+```
+#### Get Top Headlines
+
+```http
+  GET /v2/top-headlines?country=us&category=${category}&pageSize=100&apiKey=${api_key}
+
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `category`      | `string` | **Required**. Category of news (e.g., business, entertainment, health, sports, technology). |
+| `api_key`      | `string` | **Required**. Your API KEY from NewsAPI. |
+
+#### Example request
+
+```http
+ GET https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=100&apiKey=YOUR_API_KEY
+```
+
+
